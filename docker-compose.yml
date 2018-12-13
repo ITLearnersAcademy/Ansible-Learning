@@ -1,0 +1,56 @@
+version: '2'
+
+networks:
+  custom:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.61.0/24
+services:
+  control:
+    container_name: ansible-control
+    image: itla/ansible-control:v2
+    ports:
+      - "9022:22"
+    volumes:
+      - ./volshare:/workspace
+    networks:
+      custom:
+        ipv4_address: 192.168.61.10
+    dns: 8.8.8.8
+    domainname: ansiblelearn.io
+    hostname: control
+    restart: always
+    links:
+       - node1
+       - node2
+  node1:
+    container_name: ansible-node1
+    image: itla/ansible-node:v1
+    ports:
+       - "9023:22"
+    volumes:
+      - ./volshare:/workspace
+    networks:
+      custom:
+        ipv4_address: 192.168.61.11
+    dns: 8.8.8.8
+    domainname: ansiblelearn.io
+    hostname: node1
+    restart: always
+  node2:
+    container_name: ansible-node2
+    image: itla/ansible-node:v1
+    ports:
+       - "9024:22"
+    volumes:
+      - ./volshare:/workspace
+    networks:
+      custom:
+        ipv4_address: 192.168.61.12
+    dns: 8.8.8.8
+    domainname: ansiblelearn.io
+    hostname: node2
+    restart: always
+  
