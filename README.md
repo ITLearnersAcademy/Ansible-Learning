@@ -11,12 +11,12 @@ Docker-compose version: 1.23.1 or higher
 Note: This should be working on any of the recent versions of Docker or Compose. For example: Docker release 17 or higher but I have used the latest versions for my dev and testing.
 
 Setup Instructions:
-git clone https://github.com/ITLearnersAcademy/Ansible-Learning.git
-cd Ansible-Learning
-./setup_ansible_learn.sh 
+1. Clone the repository: git clone https://github.com/ITLearnersAcademy/Ansible-Learning.git
+2. Change directory: cd Ansible-Learning
+3. Run the setup script: ./setup_ansible_learn.sh 
 
 Usage Instructions:
-Open Terminal on your machine
-To connect to Ansible Control host: ssh root@ansible-control
-To connect to nodes from Control host: ssh root@node1 or ssh root@node2
+1. Open Terminal on your machine
+2. To connect to Ansible Control host: ssh root@ansible-control
+3. To connect to nodes from Control host: ssh root@node1 or ssh root@node2
 Note: You can only connect to nodes from the control host and won't be able to connect directy from your Docker Host
