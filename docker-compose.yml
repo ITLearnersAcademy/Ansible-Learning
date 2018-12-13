@@ -10,7 +10,7 @@ networks:
 services:
   control:
     container_name: ansible-control
-    image: itla/ansible-learn:ansible-control-v2
+    image: itla/ansible-control:v2
     ports:
       - "9022:22"
     volumes:
@@ -27,7 +27,7 @@ services:
        - node2
   node1:
     container_name: ansible-node1
-    image: itla/ansible-learn:ansible-node-v1
+    image: itla/ansible-node:v1
     ports:
        - "9023:22"
     volumes:
@@ -41,7 +41,7 @@ services:
     restart: always
   node2:
     container_name: ansible-node2
-    image: itla:ansible-node-v1
+    image: itla/ansible-node:v1
     ports:
        - "9024:22"
     volumes:
