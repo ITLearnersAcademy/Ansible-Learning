@@ -19,4 +19,5 @@ Usage Instructions:
 1. Open Terminal on your machine
 2. To connect to Ansible Control host: ssh root@ansible-control
 3. To connect to nodes from Control host: ssh root@node1 or ssh root@node2
+4. To check connectivity between control host and nodes: cd /workspace; ansible all -i hosts -m ping
 Note: You can only connect to nodes from the control host and won't be able to connect directy from your Docker Host
