@@ -14,10 +14,12 @@ Setup Instructions:
 1. Clone the repository: git clone https://github.com/ITLearnersAcademy/Ansible-Learning.git
 2. Change directory: cd Ansible-Learning
 3. Run the setup script: ./setup_ansible_learn.sh 
+4. Make a note of the "ansible" user's password by displaying logs using the command "sudo docker logs ansible-control".
+   Note: You need this password to supply to ansible commands which require privilege escalation to root (eg: as an option to --ask-sudo-pass) 
 
 Usage Instructions:
 1. Open Terminal on your machine
-2. To connect to Ansible Control host: ssh root@ansible-control
-3. To connect to nodes from Control host: ssh root@node1 or ssh root@node2
+2. To connect to Ansible Control host: ssh ansible@ansible-control
+3. To connect to nodes from Control host: ssh ansible@node1 or ssh ansible@node2
 4. To check connectivity between control host and nodes: cd /workspace; ansible all -i hosts -m ping
 Note: You can only connect to nodes from the control host and won't be able to connect directy from your Docker Host

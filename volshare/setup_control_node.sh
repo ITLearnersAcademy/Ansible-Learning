@@ -25,7 +25,9 @@ then
     randString=$(date|md5sum)
     IFS=" "; randInput=($randString); unset IFS
     randPassword=${randInput[0]}
-    echo "Random Password $randPassword"
+    echo "------------Make Note:------------------------"
+    echo "Ansible and Root user's password ($hostname): $randPassword"
+    echo "----------------------------------------------"
     echo "root:$randPassword" | chpasswd
     echo "ansible:$randPassword" | chpasswd
     chown -R ansible:ansible /home/ansible/.ssh/    
