@@ -1,3 +1,6 @@
 ansible-control
 ansible-node
-./volshare/base_machine_id_rsa.pub
+volshare/base_machine_id_rsa.pub
+volshare/control_machine_id_rsa.pub
+volshare/passwd.yml
+volshare/testit.sh
